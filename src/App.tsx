@@ -1,33 +1,29 @@
-import './App.css'
+import "./App.css";
+import { Todolist } from "./todolist";
 
-function App() {
+export type TaskType = {
+  id: number;
+  title: string;
+  isDone: boolean;
+};
+
+export const App = () => {
+  // data
+
+  const todolistTitle1 = "What to learn";
+
+  const tasks1: TaskType[] = [
+    { id: 1, title: "HTML&CSS", isDone: true },
+    { id: 2, title: "JS", isDone: true },
+    { id: 3, title: "React", isDone: false },
+    { id: 3, title: "REDUX", isDone: false },
+    { id: 3, title: "RTK", isDone: false },
+  ];
+
+  //
   return (
-      <div className="app">
-        <div>
-          <h3>What to learn</h3>
-          <div>
-            <input/>
-            <button>+</button>
-          </div>
-          <ul>
-            <li>
-              <input type="checkbox" checked={true}/> <span>HTML&CSS</span>
-            </li>
-            <li>
-              <input type="checkbox" checked={true}/> <span>JS</span>
-            </li>
-            <li>
-              <input type="checkbox" checked={false}/> <span>React</span>
-            </li>
-          </ul>
-          <div>
-            <button>All</button>
-            <button>Active</button>
-            <button>Completed</button>
-          </div>
-        </div>
-      </div>
-  )
-}
-
-export default App
+    <div className="app">
+      <Todolist title={todolistTitle1} tasks={tasks1} />
+    </div>
+  );
+};
