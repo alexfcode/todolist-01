@@ -1,29 +1,22 @@
 import { JSX } from "react";
-import { TaskType } from "./App";
+import { TasksType } from "./App";
 import { Button } from "./Button";
 
 type PropsType = {
   title: string;
-  tasks: TaskType[];
+  tasks: TasksType[];
 };
 
-export const Todolist = ({title, tasks}: PropsType) => {
-
-// const title = props.title
-// const tasks = props.tasks
-
-// const {title: title, tasks: tasks} = props
-
-// const {title, tasks} = props
-
-  const tasklist: JSX.Element[] | JSX.Element =
+export const Todolist = ({ title, tasks }: PropsType) => {
+  
+    const tasklist: JSX.Element[] | JSX.Element =
     tasks.length <= 0 ? (
-      <span>Тасок Нет</span>
+      <span>Tasklist is emty</span>
     ) : (
       tasks.map((t) => {
         return (
           <li key={t.id}>
-            <input type="checkbox" checked={t.isDone} /><span>{t.title}</span>
+            <input type="checkbox" checked={t.isDone} /> <span>{t.title}</span>
           </li>
         );
       })
@@ -34,13 +27,13 @@ export const Todolist = ({title, tasks}: PropsType) => {
       <h3>{title}</h3>
       <div>
         <input />
-        <Button title="+" />
+        <Button title="+"/>
       </div>
       <ul>{tasklist}</ul>
       <div>
-        <Button title="All" />
-        <Button title="Active" />
-        <Button title="Completed" />
+        <Button title="All"/>
+        <Button title="Active"/>
+        <Button title="Completed"/>
       </div>
     </div>
   );

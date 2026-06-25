@@ -1,7 +1,9 @@
 type ButtonType = {
-  title: string;
-};
+    title: string
+}
 
-export const Button = ({title}: ButtonType) => {
-  return <button>{title}</button>;
-};
+export function Button({title}: ButtonType) {
+    return (
+        <button>{title}</button>
+    )
+}
