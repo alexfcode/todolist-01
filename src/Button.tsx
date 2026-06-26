@@ -1,9 +1,10 @@
 type ButtonType = {
     title: string
+    onClick?: () => void
 }
 
-export function Button({title}: ButtonType) {
+export function Button({title, onClick}: ButtonType) {
     return (
-        <button>{title}</button>
+        <button onClick={onClick}>{title}</button>
     )
 }
